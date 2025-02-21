@@ -45,18 +45,3 @@ function borrarOpinion(index) {
 }
 
 window.onload = cargarOpiniones;
-let deferredPrompt;
-const installBtn = document.getElementById("installBtn");
-
-window.addEventListener("beforeinstallprompt", (event) => {
-  event.preventDefault();
-  deferredPrompt = event;
-  installBtn.style.display = "block";
-
-  installBtn.addEventListener("click", () => {
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then((choiceResult) => {
-      if (choiceResult.outcome === "accepted") {
-        console.log("Usuario instaló la PWA.");
-      }
-      deferredPrompt
