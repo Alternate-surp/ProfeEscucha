@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProfeEscucha</title>
+    <link rel="stylesheet" href="style.css">
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js").then(() => {
+      console.log("Service Worker registrado.");
+    });
+  }
+</script>
+
+</head>
+<body>
+    <h1>ProfeEscucha - Alumnos</h1>
+    
+    <div class="formulario">
+        <select id="materia">
+            <option value="Matemáticas">Matemáticas</option>
+            <option value="Ciencias">Ciencias</option>
+            <option value="Español">Español</option>
+            <option value="Inglés">Inglés</option>
+            <option value="Historia">Historia</option>
+        </select>
+        <input type="text" id="nombre" placeholder="Tu Nombre">
+        <input type="text" id="grado" placeholder="Grado y Grupo">
+        <label><input type="checkbox" id="anonimo"> Enviar Anónimo</label>
+        <textarea id="opinion" placeholder="Escribe tu opinión..."></textarea>
+        <button onclick="enviarOpinion()">Enviar Opinión</button>
+    </div>
+
+    <h2>Opiniones Recientes</h2>
+    <div id="opiniones"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<button id="installBtn">Instalar App</button>
+
